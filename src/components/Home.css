@@ -1,0 +1,27 @@
+
+
+@media (width <= 430px){
+    .form{
+        width: 80%;
+    }
+
+    h1{
+        text-align: center;
+    }
+}
+
+.background{
+    background-image: url(../assests/myke-simon-atsUqIm3wxo-unsplash.jpg);
+    background-size: cover;
+}
+
+h1{
+    font-weight: 700;
+}
+
+.shade{
+    height: 100%;
+    width: 100%;
+    background-color: hsla(0, 0%, 0%, 0.47);
+    
+}
