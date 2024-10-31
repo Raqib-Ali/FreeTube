@@ -12,6 +12,7 @@ import { Dashboard } from './components/Dashboard';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AdminPanel } from './components/AdminPanel';
 import { AdminLogin } from './components/AdminLogin';
+import Watch from './components/Watch';
 
 
 const root = ReactDOM.createRoot(
@@ -28,6 +29,8 @@ root.render(
       <Route path='/dashboard' element={<Dashboard/>}></Route>
       <Route path='/admin' element={<AdminPanel/>}></Route>
       <Route path='/admin-login' element={<AdminLogin/>}></Route>
+      <Route path='/watch/:id' element={<Watch/>}></Route>
+      <Route path='*' element={<div className='d-flex justify-content-center' ><span className='h4'>Page does not exist</span></div>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

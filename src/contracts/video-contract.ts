@@ -8,5 +8,5 @@ export interface VideoContract{
     Like: number;
     Dislike: number;
     Comments: string[];
-    CategoryId: number;
+    Category: string;
 }

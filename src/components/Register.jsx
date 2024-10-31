@@ -69,7 +69,7 @@ export function Register(){
         <div style={{height:"85vh"}} className="d-flex justify-content-center align-items-center">
             <div style={{top:"50px"}} className="position-absolute">{button?<Alert severity="warning">Email already found</Alert>:''}</div>
             <form onSubmit={signInForm.handleSubmit} className="border shadow p-3 rounded-3">
-               <span className="fs-3 h3">Register</span>
+               <span className="fs-3 mb-2 h3">Register</span>
                 <dl>
                     <dt>Username</dt>
                     <dd><input className="form-control" onBlur={signInForm.handleBlur} onChange={signInForm.handleChange} name="UserId" type="text" value={signInForm.values.UserId} /></dd>

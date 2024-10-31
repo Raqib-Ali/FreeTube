@@ -43,10 +43,10 @@ app.get('/get-videos', (req, res)=>{
     })    
  })
 
- app.get('/get-videos/:CategoryId', (req, res)=>{
+ app.get('/get-videos/:Category', (req, res)=>{
     mongoClient.connect(conStr).then(clientObj => {
       var database = clientObj.db('videoLibrary');
-      database.collection('videos').find({CategoryId:parseInt(req.params.CategoryId)}).toArray().then(documents => {
+      database.collection('videos').find({Category:req.params.Category}).toArray().then(documents => {
          res.send(documents);
          res.end();
       })
@@ -63,6 +63,17 @@ app.get('/get-videos', (req, res)=>{
     })    
  })
 
+ app.get('/get-favourites/:email', (req, res)=>{
+    mongoClient.connect(conStr).then(clientObj => {
+      var database = clientObj.db('videoLibrary');
+      database.collection('favouritesVideo').find({Email: req.params.email}).toArray().then(documents => {
+         res.send(documents);
+         res.end();
+      })
+    })    
+ })
+
+
 app.post('/add-video', (req, res) => {
 
     let video = {
@@ -74,7 +85,7 @@ app.post('/add-video', (req, res) => {
         Like: parseInt(req.body.Like),
         Dislike: parseInt(req.body.Dislike),
         Comments: [req.body.Comments],
-        CategoryId: req.body.CategoryId
+        Category: req.body.Category
     }
 
     mongoClient.connect(conStr).then(clientObj => {
@@ -96,7 +107,7 @@ app.put('/edit-video/:id', (req, res) => {
         Like: parseInt(req.body.Like),
         Dislike: parseInt(req.body.Dislike),
         Comments: [req.body.Comments],
-        CategoryId: parseInt(req.body.CategoryId)
+        Category: req.body.Category
     }
     mongoClient.connect(conStr).then(clientObj => {
         var database = clientObj.db('videoLibrary');
@@ -153,6 +164,20 @@ app.post('/add-category', (req, res)=>{
         var database = clientObj.db('videoLibrary');
         database.collection('categories').insertOne(category).then(()=>{
             console.log('Category Register!');
+            res.end();
+        })
+    })
+})
+
+app.post('/add-to-favourites/', (req, res)=>{
+   let video ={
+    VideoId: req.body.VideoId,
+    Email: req.body.Email
+   }
+    mongoClient.connect(conStr).then(clientObj => {
+        var database = clientObj.db('videoLibrary');
+        database.collection('favouritesVideo').insertOne(video).then(()=>{
+            console.log('favourites added!');
             res.end();
         })
     })

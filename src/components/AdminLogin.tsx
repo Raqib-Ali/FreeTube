@@ -48,9 +48,9 @@ function handleSubmit(e:any){
                 <span className="fs-3 fw-medium">Admin Login</span>
                 <dl>
                     <dt>Username</dt>
-                    <dd><input className="form-control" onChange={handleUserChange} type="text" /></dd>
+                    <dd><input required className="form-control" onChange={handleUserChange} type="text" /></dd>
                     <dt>Password</dt>
-                    <dd><input className="form-control" onChange={handlePassword} type="password" /></dd>
+                    <dd><input required className="form-control" onChange={handlePassword} type="password" /></dd>
                 </dl>
                 <button className="btn btn-info w-100">Login</button>
             </form>

@@ -10,10 +10,10 @@
     }
 }
 
-.background{
-    background-image: url(../assests/myke-simon-atsUqIm3wxo-unsplash.jpg);
+/* .background{
+    background-image: url(../assests/jens-kreuter-ngMtsE5r9eI-unsplash.jpg);
     background-size: cover;
-}
+} */
 
 h1{
     font-weight: 700;
@@ -22,6 +22,6 @@ h1{
 .shade{
     height: 100%;
     width: 100%;
-    background-color: hsla(0, 0%, 0%, 0.47);
+    /* background-color: hsla(0, 0%, 0%, 0.47); */
     
 }

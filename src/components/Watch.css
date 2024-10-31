@@ -1,0 +1,39 @@
+
+.wrap{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.frame{
+    width: 100%;
+    height: 200px;
+}
+
+.iframe{
+    width: 170px;
+    height: 90px;
+}
+
+
+@media (width >= 431px){
+   
+    
+
+}
+
+@media (width >= 1024px){
+    .wrap{
+        display: grid;
+        grid-template-columns: 8fr 4fr;
+    }
+    
+    .frame{
+        width: 100%;
+        height: 420px;
+    }
+
+    .iframe{
+        width: 200px;
+        height: 100px;
+    }
+}
